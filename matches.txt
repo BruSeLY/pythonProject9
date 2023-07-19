@@ -49,7 +49,7 @@
 7243195215;['Snapfire', 'Techies', 'Nyx Assassin', 'Morphling', 'Storm Spirit'];['Venomancer', 'Jakiro', 'Medusa', 'Timbersaw', 'Ember Spirit'];False;0;0;0.5
 7243199313;['Undying', 'Tiny', 'Drow Ranger', 'Invoker', 'Tidehunter'];['Techies', 'Pangolier', 'Disruptor', 'Terrorblade', 'Void Spirit'];False;0;0;0.5
 7243215800;['Undying', 'Spirit Breaker', 'Earthshaker', 'Faceless Void', 'Shadow Fiend'];['Necrophos', 'Windranger', 'Terrorblade', 'Huskar', 'Mirana'];True;0;0;0.5
-7243207905;['Shadow Shaman', 'Clinkz', 'Legion Commander', 'Monkey King', 'Void Spirit'];['Spirit Breaker', 'Primal Beast', 'Slark', 'Bounty Hunter', 'Huskar'];False;0;0;0.5
+7243207905;['Shadow Shaman', 'Clinkz', 'Legion Commander', 'Monkaey King', 'Void Spirit'];['Spirit Breaker', 'Primal Beast', 'Slark', 'Bounty Hunter', 'Huskar'];False;0;0;0.5
 7243257217;['Keeper of the Light', 'Vengeful Spirit', 'Faceless Void', 'Death Prophet', 'Windranger'];['Techies', 'Treant Protector', 'Primal Beast', 'Templar Assassin', 'Wraith King'];False;0;0;0.5
 7243191401;['Lich', 'Bane', 'Meepo', 'Sven', 'Storm Spirit'];['Rubick', 'Oracle', 'Beastmaster', 'Bloodseeker', 'Huskar'];True;0;0;0.5
 7243208801;['Marci', 'Io', 'Techies', 'Legion Commander', 'Windranger'];['Enchantress', 'Rubick', 'Primal Beast', 'Medusa', 'Ember Spirit'];False;0;0;0.5
