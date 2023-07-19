@@ -1,0 +1,59 @@
+7243192411;['Pudge', 'Techies', 'Windranger', 'Shadow Demon', 'Sven'];['Undying', 'Morphling', 'Legion Commander', 'Skywrath Mage', 'Snapfire'];False;0;0;0.5
+7243226200;['Clinkz', 'Monkey King', 'Storm Spirit', 'Snapfire', 'Bloodseeker'];['Bounty Hunter', 'Lina', 'Windranger', 'Muerta', 'Beastmaster'];True;0;0;0.5
+7243212113;['Lich', 'Snapfire', 'Ursa', 'Shadow Demon', 'Brewmaster'];['Spirit Breaker', 'Dazzle', 'Bloodseeker', 'Dark Willow', 'Earthshaker'];True;0;0;0.5
+7243256200;['Earthshaker', 'Spirit Breaker', 'Naga Siren', 'Undying', 'Pangolier'];['Lich', 'Nyx Assassin', 'Monkey King', 'Lina', 'Primal Beast'];False;0;0;0.5
+7243200914;['Snapfire', 'Rubick', 'Centaur Warrunner', 'Muerta', 'Lina'];['Nyx Assassin', 'Skywrath Mage', 'Tidehunter', 'Shadow Fiend', 'Zeus'];False;0;0;0.5
+7243254102;['Pugna', 'Naga Siren', 'Timbersaw', 'Earth Spirit', 'Puck'];['Legion Commander', 'Snapfire', 'Bloodseeker', 'Dazzle', 'Lina'];False;0;0;0.5
+7243249812;['Spirit Breaker', 'Medusa', 'Primal Beast', 'Pugna', 'Enigma'];['Skywrath Mage', 'Necrophos', 'Anti-Mage', 'Slark', 'Pangolier'];True;0;0;0.5
+7243222317;['Spirit Breaker', 'Io', 'Slark', 'Enigma', 'Broodmother'];['Dawnbreaker', 'Nyx Assassin', 'Razor', 'Storm Spirit', 'Naga Siren'];True;0;0;0.5
+7243198302;['Zeus', 'Sven', 'Spirit Breaker', 'Axe', 'Winter Wyvern'];['Legion Commander', 'Weaver', 'Vengeful Spirit', 'Monkey King', 'Huskar'];True;0;0;0.5
+7243221313;['Lion', 'Crystal Maiden', 'Tusk', 'Morphling', 'Nyx Assassin'];['Earthshaker', 'Lich', 'Legion Commander', 'Arc Warden', 'Anti-Mage'];False;0;0;0.5
+7243260806;['Rubick', 'Axe', 'Ogre Magi', 'Morphling', 'Shadow Fiend'];['Pudge', 'Skywrath Mage', 'Tiny', 'Storm Spirit', 'Chaos Knight'];False;0;0;0.5
+7243275102;['Spirit Breaker', 'Clockwerk', 'Dark Seer', 'Templar Assassin', 'Riki'];['Witch Doctor', 'Earth Spirit', 'Slark', 'Enigma', 'Snapfire'];False;0;0;0.5
+7243184904;['Io', 'Slark', 'Silencer', 'Sand King', 'Marci'];['Visage', 'Disruptor', 'Primal Beast', 'Techies', 'Faceless Void'];False;0;0;0.5
+7243250414;['Storm Spirit', 'Pugna', 'Riki', 'Drow Ranger', 'Treant Protector'];['Clinkz', 'Batrider', 'Earthshaker', 'Broodmother', 'Anti-Mage'];False;0;0;0.5
+7243266904;['Invoker', 'Lich', 'Muerta', 'Rubick', 'Legion Commander'];['Pudge', 'Dazzle', 'Terrorblade', 'Windranger', 'Templar Assassin'];True;0;0;0.5
+7243270513;['Clockwerk', 'Snapfire', 'Slark', 'Keeper of the Light', 'Necrophos'];['Io', 'Rubick', 'Muerta', 'Underlord', 'Meepo'];False;0;0;0.5
+7243247703;['Earthshaker', 'Snapfire', 'Pudge', 'Muerta', 'Windranger'];['Clinkz', 'Crystal Maiden', 'Morphling', 'Undying', 'Doom'];False;0;0;0.5
+7243269317;['Spirit Breaker', 'Crystal Maiden', 'Juggernaut', 'Snapfire', 'Primal Beast'];['Undying', 'Techies', 'Earthshaker', 'Slark', 'Storm Spirit'];False;0;0;0.5
+7243251514;['Techies', 'Phoenix', 'Clinkz', 'Tidehunter', 'Axe'];['Lich', 'Dazzle', 'Queen of Pain', 'Naga Siren', 'Void Spirit'];False;0;0;0.5
+7243272103;['Spirit Breaker', 'Hoodwink', 'Monkey King', 'Crystal Maiden', 'Necrophos'];['Pudge', 'Dawnbreaker', 'Clockwerk', 'Slark', 'Nyx Assassin'];True;0;0;0.5
+7243187803;['Crystal Maiden', 'Skywrath Mage', 'Primal Beast', 'Anti-Mage', 'Storm Spirit'];['Mirana', 'Disruptor', 'Tidehunter', 'Terrorblade', 'Huskar'];False;0;0;0.5
+7243213118;['Techies', 'Dazzle', 'Legion Commander', 'Storm Spirit', 'Bloodseeker'];['Crystal Maiden', 'Windranger', 'Bounty Hunter', 'Earthshaker', 'Lone Druid'];False;0;0;0.5
+7243218010;['Tiny', 'Lich', 'Dark Seer', 'Wraith King', 'Pangolier'];['Lion', 'Disruptor', 'Axe', 'Invoker', 'Anti-Mage'];False;0;0;0.5
+7243191500;['Pugna', 'Rubick', 'Kunkka', 'Muerta', 'Windranger'];['Techies', 'Medusa', 'Bloodseeker', 'Abaddon', 'Meepo'];True;0;0;0.5
+7243268613;['Pudge', 'Bane', 'Primal Beast', 'Earth Spirit', 'Medusa'];['Vengeful Spirit', 'Omniknight', 'Naga Siren', 'Snapfire', 'Broodmother'];True;0;0;0.5
+7243201119;['Undying', 'Dark Willow', 'Drow Ranger', 'Timbersaw', 'Monkey King'];['Clinkz', 'Disruptor', 'Ember Spirit', "Nature's Prophet", 'Bloodseeker'];False;0;0;0.5
+7243224412;['Pugna', 'Clinkz', 'Mars', 'Slark', 'Windranger'];['Spirit Breaker', 'Marci', 'Timbersaw', 'Terrorblade', 'Queen of Pain'];False;0;0;0.5
+7243207010;['Undying', 'Warlock', 'Winter Wyvern', 'Bloodseeker', 'Leshrac'];['Spirit Breaker', 'Lich', 'Naga Siren', 'Lycan', 'Storm Spirit'];False;0;0;0.5
+7243198408;['Witch Doctor', 'Venomancer', 'Snapfire', 'Anti-Mage', 'Void Spirit'];['Mirana', 'Skywrath Mage', 'Juggernaut', 'Invoker', 'Meepo'];False;0;0;0.5
+7243188502;['Spirit Breaker', 'Lich', 'Invoker', 'Razor', 'Wraith King'];['Disruptor', 'Skywrath Mage', 'Juggernaut', 'Axe', 'Necrophos'];True;0;0;0.5
+7243232216;['Rubick', 'Spirit Breaker', 'Templar Assassin', 'Chaos Knight', 'Slark'];['Pudge', 'Keeper of the Light', 'Ember Spirit', 'Phantom Lancer', 'Venomancer'];True;0;0;0.5
+7243232007;['Spirit Breaker', 'Silencer', 'Rubick', 'Lycan', 'Medusa'];['Enigma', 'Windranger', 'Clockwerk', 'Shadow Fiend', 'Phantom Lancer'];True;0;0;0.5
+7243266100;['Spirit Breaker', 'Lich', 'Templar Assassin', 'Dark Seer', 'Pudge'];['Crystal Maiden', 'Zeus', 'Juggernaut', 'Timbersaw', 'Huskar'];True;0;0;0.5
+7243182016;['Dawnbreaker', 'Techies', 'Templar Assassin', 'Slark', 'Dark Seer'];['Tusk', 'Clockwerk', 'Medusa', 'Timbersaw', 'Lina'];True;0;0;0.5
+7243195006;['Gyrocopter', 'Dazzle', 'Zeus', 'Sand King', 'Juggernaut'];['Rubick', 'Ogre Magi', 'Medusa', 'Tidehunter', 'Tinker'];False;0;0;0.5
+7243257015;['Rubick', 'Pudge', 'Primal Beast', 'Muerta', 'Queen of Pain'];['Spirit Breaker', 'Lich', 'Legion Commander', 'Templar Assassin', 'Slark'];False;0;0;0.5
+7243185013;['Techies', 'Venomancer', 'Zeus', 'Phoenix', 'Juggernaut'];['Pudge', 'Faceless Void', 'Ancient Apparition', 'Tidehunter', 'Arc Warden'];False;0;0;0.5
+7243264804;['Bounty Hunter', 'Dark Willow', 'Omniknight', 'Juggernaut', 'Ember Spirit'];['Windranger', 'Skywrath Mage', 'Morphling', 'Oracle', 'Shadow Fiend'];True;0;0;0.5
+7243235613;['Drow Ranger', 'Rubick', 'Mars', 'Oracle', 'Shadow Fiend'];['Broodmother', 'Dazzle', 'Slark', 'Grimstroke', 'Necrophos'];True;0;0;0.5
+7243191108;['Rubick', 'Kunkka', 'Lich', 'Juggernaut', 'Winter Wyvern'];['Nyx Assassin', 'Snapfire', 'Templar Assassin', 'Axe', 'Earthshaker'];True;0;0;0.5
+7243257319;['Ogre Magi', 'Keeper of the Light', 'Anti-Mage', 'Shadow Fiend', 'Legion Commander'];['Spirit Breaker', 'Windranger', 'Earthshaker', 'Phantom Lancer', 'Snapfire'];False;0;0;0.5
+7243215004;['Spirit Breaker', 'Earthshaker', 'Medusa', 'Warlock', 'Dragon Knight'];['Lich', 'Sand King', 'Crystal Maiden', 'Naga Siren', 'Tinker'];False;0;0;0.5
+7243180815;['Earth Spirit', 'Terrorblade', 'Shadow Fiend', 'Axe', 'Huskar'];['Faceless Void', 'Spirit Breaker', 'Oracle', 'Outworld Destroyer', 'Tiny'];True;0;0;0.5
+7243192304;['Earth Spirit', 'Lina', 'Legion Commander', 'Slark', 'Pudge'];['Oracle', 'Io', 'Juggernaut', 'Windranger', 'Huskar'];True;0;0;0.5
+7243271516;['Skywrath Mage', 'Lich', 'Legion Commander', 'Ursa', 'Huskar'];['Mirana', 'Batrider', 'Snapfire', 'Drow Ranger', 'Windranger'];True;0;0;0.5
+7243219809;['Queen of Pain', 'Spirit Breaker', 'Beastmaster', 'Lich', 'Marci'];['Zeus', 'Weaver', 'Legion Commander', 'Silencer', 'Storm Spirit'];False;0;0;0.5
+7243240807;['Bounty Hunter', 'Pugna', 'Clockwerk', 'Tidehunter', 'Slark'];['Techies', 'Clinkz', 'Pangolier', 'Pudge', 'Medusa'];True;0;0;0.5
+7243273412;['Clinkz', 'Undying', 'Bloodseeker', 'Tidehunter', 'Pangolier'];['Witch Doctor', 'Rubick', 'Slark', 'Visage', 'Outworld Destroyer'];True;0;0;0.5
+7243195215;['Snapfire', 'Techies', 'Nyx Assassin', 'Morphling', 'Storm Spirit'];['Venomancer', 'Jakiro', 'Medusa', 'Timbersaw', 'Ember Spirit'];False;0;0;0.5
+7243199313;['Undying', 'Tiny', 'Drow Ranger', 'Invoker', 'Tidehunter'];['Techies', 'Pangolier', 'Disruptor', 'Terrorblade', 'Void Spirit'];False;0;0;0.5
+7243215800;['Undying', 'Spirit Breaker', 'Earthshaker', 'Faceless Void', 'Shadow Fiend'];['Necrophos', 'Windranger', 'Terrorblade', 'Huskar', 'Mirana'];True;0;0;0.5
+7243207905;['Shadow Shaman', 'Clinkz', 'Legion Commander', 'Monkey King', 'Void Spirit'];['Spirit Breaker', 'Primal Beast', 'Slark', 'Bounty Hunter', 'Huskar'];False;0;0;0.5
+7243257217;['Keeper of the Light', 'Vengeful Spirit', 'Faceless Void', 'Death Prophet', 'Windranger'];['Techies', 'Treant Protector', 'Primal Beast', 'Templar Assassin', 'Wraith King'];False;0;0;0.5
+7243191401;['Lich', 'Bane', 'Meepo', 'Sven', 'Storm Spirit'];['Rubick', 'Oracle', 'Beastmaster', 'Bloodseeker', 'Huskar'];True;0;0;0.5
+7243208801;['Marci', 'Io', 'Techies', 'Legion Commander', 'Windranger'];['Enchantress', 'Rubick', 'Primal Beast', 'Medusa', 'Ember Spirit'];False;0;0;0.5
+7243269518;['Venomancer', 'Legion Commander', 'Magnus', 'Ancient Apparition', 'Faceless Void'];['Nyx Assassin', 'Jakiro', 'Axe', 'Ursa', 'Void Spirit'];True;0;0;0.5
+7243182305;['Snapfire', 'Pudge', 'Bounty Hunter', 'Juggernaut', 'Mars'];['Lion', 'Nyx Assassin', 'Enigma', 'Drow Ranger', 'Meepo'];True;0;0;0.5
+7243206213;['Lich', 'Storm Spirit', 'Legion Commander', 'Lina', 'Naga Siren'];['Slardar', 'Skywrath Mage', 'Earthshaker', 'Juggernaut', 'Tinker'];False;0;0;0.5
+7243190704;['Keeper of the Light', 'Undying', 'Clinkz', 'Legion Commander', 'Broodmother'];['Invoker', 'Spirit Breaker', 'Witch Doctor', 'Rubick', 'Morphling'];True;0;0;0.5
