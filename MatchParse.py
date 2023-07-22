@@ -1,18 +1,13 @@
-from bs4 import BeautifulSoup
 from requests_html import HTMLSession
 import requests
+
 
 session = HTMLSession()
 url = "https://www.opendota.com/matches/highMmr"
 r = session.get(url)
-r.html.render(sleep=1, keep_page=True, scrolldown=1)
+r.html.render(sleep=1, keep_page=True, scrolldown=2, timeout=20)
 matches_not_final = {}
 r = r.html.links
-
-
-total_radiant = 0
-total_dire = 0
-rate = 0.5
 
 
 matches = {}
@@ -21,10 +16,11 @@ for i in r:
     if len(i) == 19:
         matches_not_final[t] = i[9:]
         t += 1
-
+print(1)
 print(len(matches_not_final))
 for i in range(len(matches_not_final)):
     with open("matches.txt", "a") as a:
+
         response = requests.get('https://api.opendota.com/api/matches/' + matches_not_final[i]).json()
 
         radiant = []
@@ -49,15 +45,12 @@ for i in range(len(matches_not_final)):
                 for j in range(5):
                     dire[j] = sl[dire[j]]
                 if i < len(matches_not_final):
-                    a.write(f"{response['match_id']};{radiant};{dire};{radiantWin};{total_radiant};{total_dire};{rate}\n")
+                    a.write(f"{response['match_id']};{radiant};{dire};{radiantWin}\n")
                 else:
-                    a.write(f"{response['match_id']};{radiant};{dire};{radiantWin};{total_radiant};{total_dire};{rate}")
+                    a.write(f"{response['match_id']};{radiant};{dire};{radiantWin}")
             radiant = []
             dire = []
             radiantWin = None
-            total_radiant = 0
-            total_dire = 0
-            rate = 0.5
             response = ""
 
 print("END")
