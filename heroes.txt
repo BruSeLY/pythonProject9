@@ -2,31 +2,31 @@
 2;Axe
 3;Bane
 4;Bloodseeker
-5;Crystal Maiden
-6;Drow Ranger
+5;Crystal_Maiden
+6;Drow_Ranger
 7;Earthshaker
 8;Juggernaut
 9;Mirana
 10;Morphling
-11;Shadow Fiend
-12;Phantom Lancer
+11;Shadow_Fiend
+12;Phantom_Lancer
 13;Puck
 14;Pudge
 15;Razor
-16;Sand King
-17;Storm Spirit
+16;Sand_King
+17;Storm_Spirit
 18;Sven
 19;Tiny
-20;Vengeful Spirit
+20;Vengeful_Spirit
 21;Windranger
 22;Zeus
 23;Kunkka
 25;Lina
 26;Lion
-27;Shadow Shaman
+27;Shadow_Shaman
 28;Slardar
 29;Tidehunter
-30;Witch Doctor
+30;Witch_Doctor
 31;Lich
 32;Riki
 33;Enigma
@@ -35,90 +35,90 @@
 36;Necrophos
 37;Warlock
 38;Beastmaster
-39;Queen of Pain
+39;Queen_of_Pain
 40;Venomancer
-41;Faceless Void
-42;Wraith King
-43;Death Prophet
-44;Phantom Assassin
+41;Faceless_Void
+42;Wraith_King
+43;Death_Prophet
+44;Phantom_Assassin
 45;Pugna
-46;Templar Assassin
+46;Templar_Assassin
 47;Viper
 48;Luna
-49;Dragon Knight
+49;Dragon_Knight
 50;Dazzle
 51;Clockwerk
 52;Leshrac
-53;Nature's Prophet
+53;Nature's_Prophet
 54;Lifestealer
-55;Dark Seer
+55;Dark_Seer
 56;Clinkz
 57;Omniknight
 58;Enchantress
 59;Huskar
-60;Night Stalker
+60;Night_Stalker
 61;Broodmother
-62;Bounty Hunter
+62;Bounty_Hunter
 63;Weaver
 64;Jakiro
 65;Batrider
 66;Chen
 67;Spectre
-68;Ancient Apparition
+68;Ancient_Apparition
 69;Doom
 70;Ursa
-71;Spirit Breaker
+71;Spirit_Breaker
 72;Gyrocopter
 73;Alchemist
 74;Invoker
 75;Silencer
-76;Outworld Destroyer
+76;Outworld_Destroyer
 77;Lycan
 78;Brewmaster
-79;Shadow Demon
-80;Lone Druid
-81;Chaos Knight
+79;Shadow_Demon
+80;Lone_Druid
+81;Chaos_Knight
 82;Meepo
-83;Treant Protector
-84;Ogre Magi
+83;Treant_Protector
+84;Ogre_Magi
 85;Undying
 86;Rubick
 87;Disruptor
-88;Nyx Assassin
-89;Naga Siren
-90;Keeper of the Light
+88;Nyx_Assassin
+89;Naga_Siren
+90;Keeper_of_the_Light
 91;Io
 92;Visage
 93;Slark
 94;Medusa
-95;Troll Warlord
-96;Centaur Warrunner
+95;Troll_Warlord
+96;Centaur_Warrunner
 97;Magnus
 98;Timbersaw
 99;Bristleback
 100;Tusk
-101;Skywrath Mage
+101;Skywrath_Mage
 102;Abaddon
-103;Elder Titan
-104;Legion Commander
+103;Elder_Titan
+104;Legion_Commander
 105;Techies
-106;Ember Spirit
-107;Earth Spirit
+106;Ember_Spirit
+107;Earth_Spirit
 108;Underlord
 109;Terrorblade
 110;Phoenix
 111;Oracle
-112;Winter Wyvern
-113;Arc Warden
-114;Monkey King
-119;Dark Willow
+112;Winter_Wyvern
+113;Arc_Warden
+114;Monkey_King
+119;Dark_Willow
 120;Pangolier
 121;Grimstroke
 123;Hoodwink
-126;Void Spirit
+126;Void_Spirit
 128;Snapfire
 129;Mars
 135;Dawnbreaker
 136;Marci
-137;Primal Beast
+137;Primal_Beast
 138;Muerta

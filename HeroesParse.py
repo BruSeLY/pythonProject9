@@ -9,6 +9,6 @@ heroes = requests.get("https://api.opendota.com/api/heroes").json()
 with open ("heroes.txt", "w") as f:
     for i in range(len(heroes)):
         if i != len(heroes) - 1:
-            f.write(f'{heroes[i]["id"]};{heroes[i]["localized_name"]}\n')
+            f.write(f'{heroes[i]["id"]};{"_".join(heroes[i]["localized_name"].split())}\n')
         else:
-            f.write(f'{(heroes[i]["id"])};{heroes[i]["localized_name"]}')
+            f.write(f'{(heroes[i]["id"])};{"_".join(heroes[i]["localized_name"].split())}')

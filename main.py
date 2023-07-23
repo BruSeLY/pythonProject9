@@ -1,5 +1,9 @@
-import requests
 import telebot
+import numpy as np
+import PIL
+from PIL import Image
+import os
+import requests
 from bs4 import BeautifulSoup
 import time
 from requests_html import HTMLSession
@@ -35,7 +39,7 @@ class User:
             bot.send_message(msg.chat.id, f"Недостаточно очков. Баланс: {users[msg.from_user.id].points}", reply_markup=types.ReplyKeyboardRemove())
             users[msg.from_user.id].status = "vote"
         else:
-            with open("transaction.txt", "a") as f:z
+            with open("transaction.txt", "a") as f:
                 print(len(match))
                 print(match[3])
 
@@ -151,13 +155,38 @@ def callback_query(call):
             btn1 = InlineKeyboardButton('bet Radiant', callback_data='btn1')
             btn2 = InlineKeyboardButton('Вернуться!', callback_data='btn2')
             btn3 = InlineKeyboardButton('bet Dire', callback_data='btn3')
+            photoRadiant = Image.new("RGB", (256*5, 144), "black")
+            photoDire = Image.new("RGB", (256*5, 144), "black")
+            print(f"{radiantThis[1]}_icon.webp")
+            im1 = Image.open(f"{radiantThis[0]}_icon.webp").convert("RGB")
 
+            im2 = Image.open(f"{radiantThis[1]}_icon.webp").convert("RGB")
+            im3 = Image.open(f"{radiantThis[2]}_icon.webp").convert("RGB")
+            im4 = Image.open(f"{radiantThis[3]}_icon.webp").convert("RGB")
+            im5 = Image.open(f"{radiantThis[4]}_icon.webp").convert("RGB")
+            im6 = Image.open(f"{direThis[0]}_icon.webp").convert("RGB")
+            im7 = Image.open(f"{direThis[1]}_icon.webp").convert("RGB")
+            im8 = Image.open(f"{direThis[2]}_icon.webp").convert("RGB")
+            im9 = Image.open(f"{direThis[3]}_icon.webp").convert("RGB")
+            im10 = Image.open(f"{direThis[4]}_icon.webp").convert("RGB")
+            photoRadiant.paste(im1, (0, 0))
+            photoRadiant.paste(im2, (256,0))
+            photoRadiant.paste(im3, (256*2, 0))
+            photoRadiant.paste(im4, (256*3, 0))
+            photoRadiant.paste(im5, (256*4, 0))
+            photoDire.paste(im6, (0, 0))
+            photoDire.paste(im7, (256, 0))
+            photoDire.paste(im8, (256*2, 0))
+            photoDire.paste(im9, (256*3, 0))
+            photoDire.paste(im10, (256*4, 0))
             markup.row(btn1, btn3)
             markup.row(btn2)
             print(radiantThis, direThis)
+
             bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                                   text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n', reply_markup=markup)
-
+            bot.send_photo(msg.chat.id, photoRadiant)
+            bot.send_photo(msg.chat.id, photoDire)
             users[msg.from_user.id].status = "vote"
     elif call.data == "Рейтинг":
         pass

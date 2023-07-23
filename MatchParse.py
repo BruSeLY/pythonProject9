@@ -5,7 +5,7 @@ import requests
 session = HTMLSession()
 url = "https://www.opendota.com/matches/highMmr"
 r = session.get(url)
-r.html.render(sleep=1, keep_page=True, scrolldown=2, timeout=20)
+r.html.render(sleep=1, keep_page=True, scrolldown=2, timeout=25)
 matches_not_final = {}
 r = r.html.links
 
