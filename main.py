@@ -35,7 +35,7 @@ class User:
             bot.send_message(msg.chat.id, f"Недостаточно очков. Баланс: {users[msg.from_user.id].points}", reply_markup=types.ReplyKeyboardRemove())
             users[msg.from_user.id].status = "vote"
         else:
-            with open("transaction.txt", "a") as f:
+            with open("transaction.txt", "a") as f:z
                 print(len(match))
                 print(match[3])
 
@@ -46,15 +46,19 @@ class User:
                 if not(win_or_loss):
                     users[msg.from_user.id].points -= put_points
                     f.write(f'{msg.from_user.id};{self.points};{put_points};{side}{win_or_loss}')
-                    bot.send_message(msg.chat.id, f"@{self.name}, вы поставили {put_points} и проиграли. Баланс: {users[msg.from_user.id].points}", reply_markup=types.ReplyKeyboardRemove())
+                    bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
+                                     text=f"@{self.name}, вы поставили {put_points} и проиграли. Баланс: "
+                                          f"{users[msg.from_user.id].points}")
                     self.lost += 1
                 else:
                     users[msg.from_user.id].points += (2 * put_points)
                     f.write(f'{msg.from_user.id};{self.points};{put_points};{side}{win_or_loss}')
-                    bot.send_message(msg.chat.id, f"@{self.name}, вы поставили {put_points} и победили. Баланс: {users[msg.from_user.id].points}", reply_markup=types.ReplyKeyboardRemove())
+                    bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
+                                          text=f"@{self.name}, вы поставили {put_points} и победили. Баланс: "
+                                               f"{users[msg.from_user.id].points}\nСпасибо, что играете в нашу игру!!!")
                     self.wins += 1
 
-                bot.send_message(msg.chat.id, f"@{self.name}, спасибо, что играете в нашу игру!!!")
+
 
         side = None
         currentMatch = None
@@ -96,34 +100,7 @@ def main_text_logic(mesg):
 
         markup1.row(btn4, btn6)
         markup1.row(btn5)
-        message_id_bot = bot.send_message(msg.chat.id, f"Здравствуйте, {msg.from_user.first_name}. Хотите поставить на матч?", reply_markup=markup1)
-        # users[msg.from_user.id].status = "wait"
-    # if users[msg.from_user.id].status == "wait":
-    #     if msg.text == "Поставить очки":
-    #         with open("matches.txt", "r") as f:
-    #             f = f.read().split("\n")
-    #             match = f[0].split(';')
-    #             time.sleep(3)
-    #             print(match)
-    #             currentMatch = match[0]
-    #             direThis1 = match[2][1:-1].split(", ")
-    #             direThis = [i[1:-1] for i in direThis1]
-    #             radiantThis1 = match[1][1:-1].split(", ")
-    #             radiantThis = [i[1:-1] for i in radiantThis1]
-    #             print(radiantThis, direThis)
-    #             bot.edit_message_text(chat_id = message_id_bot.chat.id, message_id = message_id_bot.message_id,
-    #                                   text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n',reply_markup=types.ReplyKeyboardRemove())
-    #             markup = InlineKeyboardMarkup()
-    #             btn1 = InlineKeyboardButton('bet Radiant', callback_data='btn1')
-    #             btn2 = InlineKeyboardButton('Вернуться!', callback_data='btn2')
-    #             btn3 = InlineKeyboardButton('bet Dire', callback_data='btn3')
-    #
-    #             markup.row(btn1, btn3)
-    #             markup.row(btn2)
-    #             time.sleep(2)
-    #             bot.edit_message_text(chat_id = message_id_bot.chat.id, message_id = message_id_bot.message_id,
-    #                                   text= f'@{msg.from_user.first_name} \nВыберите команду, которая победит\nЧтобы это сделать введите <bet Radiant> или <bet Dire> без ковычек', reply_markup=markup)
-    #             users[msg.from_user.id].status = "vote"
+        message_id_bot = bot.send_message(msg.chat.id, f"Здравствуйте, @{msg.from_user.first_name}. Хотите поставить на матч?", reply_markup=markup1)
     if users[msg.from_user.id].status == "bet":
         play(msg, usr, match)
 
@@ -141,22 +118,24 @@ def play(msg, usr, match):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     global users, side, msg, message_id_bot, usr, match, currentMatch
-    if call.data == 'btn1':
-        side = 0
-        bot.edit_message_text(chat_id = message_id_bot.chat.id, message_id = message_id_bot.message_id, text= f"@{msg.from_user.first_name}, введите колличество очков")
-        users[msg.from_user.id].status = "bet"
-    elif call.data == 'btn2':
+    if call.data == 'btn2':
         bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                               text=f"@{msg.from_user.first_name}, вы выбрали вернуться назад")
         users[msg.from_user.id].status = "menu"
-    elif call.data == 'btn3':
-        side = 1
-        bot.edit_message_text(chat_id = message_id_bot.chat.id, message_id = message_id_bot.message_id, text= f"@{msg.from_user.first_name}, введите колличество очков")
-        users[msg.from_user.id].status = "bet"
     elif call.data == "Balance":
         time.sleep(5)
         bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                               text=f"@{msg.from_user.first_name}, Баланс: {usr.points}")
+    elif call.data == 'btn1':
+        side = 0
+        bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
+                              text=f"@{msg.from_user.first_name}, введите колличество очков")
+        users[msg.from_user.id].status = "bet"
+    elif call.data == 'btn3':
+        side = 1
+        bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
+                              text=f"@{msg.from_user.first_name}, введите колличество очков")
+        users[msg.from_user.id].status = "bet"
     elif call.data == "Play":
         with open("matches.txt", "r") as f:
             f = f.read().split("\n")
@@ -168,9 +147,6 @@ def callback_query(call):
             direThis = [i[1:-1] for i in direThis1]
             radiantThis1 = match[1][1:-1].split(", ")
             radiantThis = [i[1:-1] for i in radiantThis1]
-            print(radiantThis, direThis)
-            bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
-                                  text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n')
             markup = InlineKeyboardMarkup()
             btn1 = InlineKeyboardButton('bet Radiant', callback_data='btn1')
             btn2 = InlineKeyboardButton('Вернуться!', callback_data='btn2')
@@ -178,10 +154,10 @@ def callback_query(call):
 
             markup.row(btn1, btn3)
             markup.row(btn2)
-
+            print(radiantThis, direThis)
             bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
-                                  text=f'@{msg.from_user.first_name} \nВыберите команду, которая победит\nЧтобы это сделать введите <bet Radiant> или <bet Dire> без ковычек',
-                                  reply_markup=markup)
+                                  text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n', reply_markup=markup)
+
             users[msg.from_user.id].status = "vote"
     elif call.data == "Рейтинг":
         pass
