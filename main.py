@@ -1,12 +1,7 @@
 import telebot
-import numpy as np
-import PIL
 from PIL import Image
-import os
-import requests
-from bs4 import BeautifulSoup
+import random
 import time
-from requests_html import HTMLSession
 from telebot import types # для указание типов
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -31,7 +26,7 @@ class User:
         self.name = name
         self.wins = 0
         self.lost = 0
-        self.rating = None
+        self.matches_played = []
         with open("user.txt", "w") as f:
             f.write(f'{uid};{name};{self.points}')
 
@@ -52,7 +47,7 @@ class User:
                     win_or_loss = True
                 if not(win_or_loss):
                     users[msg.from_user.id].points -= put_points
-                    f.write(f'{msg.from_user.id};{self.points};{put_points};{side}{win_or_loss}')
+                    f.write(f'{msg.from_user.id};{self.points};{put_points};{side}{win_or_loss}\n')
                     bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                                      text=f"@{self.name}, вы поставили {put_points} и проиграли. Баланс: "
                                           f"{users[msg.from_user.id].points}")
@@ -65,9 +60,7 @@ class User:
                                                f"{users[msg.from_user.id].points}\nСпасибо, что играете в нашу игру!!!")
                     self.wins += 1
         bot.delete_message(chat_id=delete_bot.chat.id, message_id=delete_bot.message_id)
-
-
-
+        self.matches_played.append(match[0])
         side = None
         currentMatch = None
         win_or_loss = False
@@ -144,7 +137,15 @@ def callback_query(call):
     elif call.data == "Play":
         with open("matches.txt", "r") as f:
             f = f.read().split("\n")
-            match = f[0].split(';')
+            find_match = f.copy()
+            while True:
+                buff = random.randint(0, len(find_match) - 1)
+                print(find_match[buff].split(";")[0])
+                if find_match[buff].split(";")[0] not in users[msg.from_user.id].matches_played:
+                    match = f[buff].split(";")
+                    break
+                else:
+                    find_match[buff].remove()
             print(match)
             currentMatch = match[0]
             direThis1 = match[2][1:-1].split(", ")
@@ -180,7 +181,6 @@ def callback_query(call):
             markup.row(btn1, btn3)
             markup.row(btn2)
             print(radiantThis, direThis)
-
             bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                                   text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n', reply_markup=markup)
             delete_bot = bot.send_photo(msg.chat.id, photoRadiant)
