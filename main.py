@@ -17,9 +17,12 @@ print("END")
 
 side = ""
 currentMatch = None
+delete_bot = None
 
 
 class User:
+    global delete_bot
+
     def __init__(self, uid, name):
         global users
         self.user_id = uid
@@ -61,6 +64,7 @@ class User:
                                           text=f"@{self.name}, вы поставили {put_points} и победили. Баланс: "
                                                f"{users[msg.from_user.id].points}\nСпасибо, что играете в нашу игру!!!")
                     self.wins += 1
+        bot.delete_message(chat_id=delete_bot.chat.id, message_id=delete_bot.message_id)
 
 
 
@@ -116,12 +120,9 @@ def play(msg, usr, match):
         users[msg.from_user.id].status = "menu"
 
 
-
-
-
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
-    global users, side, msg, message_id_bot, usr, match, currentMatch
+    global users, side, msg, message_id_bot, usr, match, currentMatch, delete_bot
     if call.data == 'btn2':
         bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                               text=f"@{msg.from_user.first_name}, вы выбрали вернуться назад")
@@ -144,7 +145,6 @@ def callback_query(call):
         with open("matches.txt", "r") as f:
             f = f.read().split("\n")
             match = f[0].split(';')
-            time.sleep(10)
             print(match)
             currentMatch = match[0]
             direThis1 = match[2][1:-1].split(", ")
@@ -155,50 +155,38 @@ def callback_query(call):
             btn1 = InlineKeyboardButton('bet Radiant', callback_data='btn1')
             btn2 = InlineKeyboardButton('Вернуться!', callback_data='btn2')
             btn3 = InlineKeyboardButton('bet Dire', callback_data='btn3')
-            photoRadiant = Image.new("RGB", (256*5, 144), "black")
-            photoDire = Image.new("RGB", (256*5, 144), "black")
+            photoRadiant = Image.open("Background.jpg").resize((512*5, 1520))
             print(f"{radiantThis[1]}_icon.webp")
-            im1 = Image.open(f"{radiantThis[0]}_icon.webp").convert("RGB")
-
-            im2 = Image.open(f"{radiantThis[1]}_icon.webp").convert("RGB")
-            im3 = Image.open(f"{radiantThis[2]}_icon.webp").convert("RGB")
-            im4 = Image.open(f"{radiantThis[3]}_icon.webp").convert("RGB")
-            im5 = Image.open(f"{radiantThis[4]}_icon.webp").convert("RGB")
-            im6 = Image.open(f"{direThis[0]}_icon.webp").convert("RGB")
-            im7 = Image.open(f"{direThis[1]}_icon.webp").convert("RGB")
-            im8 = Image.open(f"{direThis[2]}_icon.webp").convert("RGB")
-            im9 = Image.open(f"{direThis[3]}_icon.webp").convert("RGB")
-            im10 = Image.open(f"{direThis[4]}_icon.webp").convert("RGB")
+            im1 = Image.open(f"{radiantThis[0]}_icon.webp").convert("RGB").resize((512, 288))
+            im2 = Image.open(f"{radiantThis[1]}_icon.webp").convert("RGB").resize((512, 288))
+            im3 = Image.open(f"{radiantThis[2]}_icon.webp").convert("RGB").resize((512, 288))
+            im4 = Image.open(f"{radiantThis[3]}_icon.webp").convert("RGB").resize((512, 288))
+            im5 = Image.open(f"{radiantThis[4]}_icon.webp").convert("RGB").resize((512, 288))
+            im6 = Image.open(f"{direThis[0]}_icon.webp").convert("RGB").resize((512, 288))
+            im7 = Image.open(f"{direThis[1]}_icon.webp").convert("RGB").resize((512, 288))
+            im8 = Image.open(f"{direThis[2]}_icon.webp").convert("RGB").resize((512, 288))
+            im9 = Image.open(f"{direThis[3]}_icon.webp").convert("RGB").resize((512, 288))
+            im10 = Image.open(f"{direThis[4]}_icon.webp").convert("RGB").resize((512, 288))
             photoRadiant.paste(im1, (0, 0))
-            photoRadiant.paste(im2, (256,0))
-            photoRadiant.paste(im3, (256*2, 0))
-            photoRadiant.paste(im4, (256*3, 0))
-            photoRadiant.paste(im5, (256*4, 0))
-            photoDire.paste(im6, (0, 0))
-            photoDire.paste(im7, (256, 0))
-            photoDire.paste(im8, (256*2, 0))
-            photoDire.paste(im9, (256*3, 0))
-            photoDire.paste(im10, (256*4, 0))
+            photoRadiant.paste(im2, (512, 0))
+            photoRadiant.paste(im3, (512*2, 0))
+            photoRadiant.paste(im4, (512*3, 0))
+            photoRadiant.paste(im5, (512*4, 0))
+            photoRadiant.paste(im6, (0, 1230))
+            photoRadiant.paste(im7, (512, 1230))
+            photoRadiant.paste(im8, (512*2, 1230))
+            photoRadiant.paste(im9, (512*3, 1230))
+            photoRadiant.paste(im10, (512*4, 1230))
             markup.row(btn1, btn3)
             markup.row(btn2)
             print(radiantThis, direThis)
 
             bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
                                   text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n', reply_markup=markup)
-            bot.send_photo(msg.chat.id, photoRadiant)
-            bot.send_photo(msg.chat.id, photoDire)
+            delete_bot = bot.send_photo(msg.chat.id, photoRadiant)
             users[msg.from_user.id].status = "vote"
     elif call.data == "Рейтинг":
         pass
 
 
 bot.polling(none_stop=True, interval=0)
-
-# button1 = InlineKeyboardButton('Кнопка 1', callback_data='button1')
-# button2 = InlineKeyboardButton('Кнопка 2', callback_data='button2')
-# button3 = InlineKeyboardButton('Кнопка 3', callback_data='button3')
-# button4 = InlineKeyboardButton('Кнопка 4', callback_data='button4')
-#
-# markup = InlineKeyboardMarkup()
-# markup.row(button1, button2)
-# markup.row(button3, button4)
