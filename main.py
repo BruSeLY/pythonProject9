@@ -5,6 +5,7 @@ import time
 from telebot import types # для указание типов
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 
+
 bot = telebot.TeleBot("5678522382:AAEesuQUS9qppa5MIjPik_JyKAXuc-6uIAc")
 gameStarted = False
 users = {}
@@ -13,6 +14,9 @@ print("END")
 side = ""
 currentMatch = None
 delete_bot = None
+
+radiantThis = None
+direThis = None
 
 
 class User:
@@ -146,18 +150,18 @@ def callback_query(call):
                     break
                 else:
                     find_match[buff].remove()
-            print(match)
-            currentMatch = match[0]
-            direThis1 = match[2][1:-1].split(", ")
-            direThis = [i[1:-1] for i in direThis1]
-            radiantThis1 = match[1][1:-1].split(", ")
-            radiantThis = [i[1:-1] for i in radiantThis1]
             markup = InlineKeyboardMarkup()
             btn1 = InlineKeyboardButton('bet Radiant', callback_data='btn1')
             btn2 = InlineKeyboardButton('Вернуться!', callback_data='btn2')
             btn3 = InlineKeyboardButton('bet Dire', callback_data='btn3')
-            photoRadiant = Image.open("Background.jpg").resize((512*5, 1520))
-            print(f"{radiantThis[1]}_icon.webp")
+
+            currentMatch = match[0]
+
+            direThis1 = match[2][1:-1].split(", ")
+            direThis = [i[1:-1] for i in direThis1]
+            radiantThis1 = match[1][1:-1].split(", ")
+            radiantThis = [i[1:-1] for i in radiantThis1]
+            photoRadiant = Image.open("Background.jpg").resize((512 * 5, 1520))
             im1 = Image.open(f"{radiantThis[0]}_icon.webp").convert("RGB").resize((512, 288))
             im2 = Image.open(f"{radiantThis[1]}_icon.webp").convert("RGB").resize((512, 288))
             im3 = Image.open(f"{radiantThis[2]}_icon.webp").convert("RGB").resize((512, 288))
@@ -170,19 +174,20 @@ def callback_query(call):
             im10 = Image.open(f"{direThis[4]}_icon.webp").convert("RGB").resize((512, 288))
             photoRadiant.paste(im1, (0, 0))
             photoRadiant.paste(im2, (512, 0))
-            photoRadiant.paste(im3, (512*2, 0))
-            photoRadiant.paste(im4, (512*3, 0))
-            photoRadiant.paste(im5, (512*4, 0))
+            photoRadiant.paste(im3, (512 * 2, 0))
+            photoRadiant.paste(im4, (512 * 3, 0))
+            photoRadiant.paste(im5, (512 * 4, 0))
             photoRadiant.paste(im6, (0, 1230))
             photoRadiant.paste(im7, (512, 1230))
-            photoRadiant.paste(im8, (512*2, 1230))
-            photoRadiant.paste(im9, (512*3, 1230))
-            photoRadiant.paste(im10, (512*4, 1230))
+            photoRadiant.paste(im8, (512 * 2, 1230))
+            photoRadiant.paste(im9, (512 * 3, 1230))
+            photoRadiant.paste(im10, (512 * 4, 1230))
             markup.row(btn1, btn3)
             markup.row(btn2)
             print(radiantThis, direThis)
             bot.edit_message_text(chat_id=message_id_bot.chat.id, message_id=message_id_bot.message_id,
-                                  text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: {", ".join(direThis)}\n', reply_markup=markup)
+                                  text=f'@{msg.from_user.first_name} \nRadiant: {", ".join(radiantThis)}\nDire: '
+                                       f'{", ".join(direThis)}\n', reply_markup=markup)
             delete_bot = bot.send_photo(msg.chat.id, photoRadiant)
             users[msg.from_user.id].status = "vote"
     elif call.data == "Рейтинг":
